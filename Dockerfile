@@ -8,4 +8,4 @@ RUN mvn -f /usr/src/app/pom.xml clean install
 
 FROM tomcat
 RUN rm -fr /usr/local/tomcat/webapps/ROOT
-COPY --from=s1 /usr/src/app/target/mapp1.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=s1 /usr/src/app/target/*.war /usr/local/tomcat/webapps/ROOT.war
